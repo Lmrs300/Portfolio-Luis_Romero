@@ -4,8 +4,10 @@ import robotsTxt from "astro-robots-txt";
 
 import react from "@astrojs/react";
 
+import netlify from "@astrojs/netlify";
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), robotsTxt(), react()],
-  site: "https://Lmrs300.github.io",
+  adapter: netlify(),
 });
