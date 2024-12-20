@@ -3,9 +3,7 @@
   "compilerOptions": {
     "baseUrl": "C:/UNIVERSIDAD/Programacion/1.proyectos_personales/Astro/portfolio",
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
+      "@/*": ["src/*"]
     },
     "jsx": "react-jsx",
     "jsxImportSource": "react"
