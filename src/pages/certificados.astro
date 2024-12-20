@@ -1,0 +1,126 @@
+---
+import Layout from "@/layouts/Layout.astro";
+
+const certs = [
+    {
+      title: "Back End Development and Apis",
+      image: "/certs/Certificacion - Back-end development and apis.png",
+      url: "https://www.freecodecamp.org/certification/Lmrs30/back-end-development-and-apis",
+    },
+    {
+      title: "Universidad Angular - Cero a Experto - Angular 18",
+      image: "/certs/Certificado curso Angular.png",
+      url: "https://www.udemy.com/certificate/UC-87cf95a3-2f67-4e1f-b60e-bd7051f64eac/",
+    },
+    {
+      title: "Introducción al desarrollo web: HTML y CSS",
+      image: "/certs/Introducción al desarrollo web.png",
+      url: "https://skillshop.exceedlms.com/student/award/CRJ2K7SZ4xhHhx7jcZpiAYRD",
+    },
+    {
+      title: "Python Essentials 1",
+      image: "/certs/Python Essentials 1 - Certificado.png",
+      url: "https://www.credly.com/badges/69e74d0e-6df5-45a9-9adb-1eae71fdb365",
+    },
+    {
+      title: "Python Essentials 2",
+      image: "/certs/Python Essentials 2 - Certificado.png",
+      url: "https://www.credly.com/badges/e922a7a8-b5a8-4200-87f7-cc7f7739ba9a",
+    },
+    {
+      title: "Hacksplaining Security Training",
+      image: "/certs/Hacksplaining Completion Certificate.png",
+      url: "",
+    },
+  ];
+---
+
+<Layout title="Certificados" description="Certificados de Luis Romero" showFooter={false}>
+<main class="  py-16 scroll-m-20 w-full mx-auto container flex justify-center items-center flex-col relative">
+    <a href="/#certificados" class="absolute top-16 md:left-0 left-3 text-lg hover:text-blue-500 transition">{"<"} Volver</a>
+    <h1 class="text-5xl">Certificados</h1>
+    <ul class="h-full flex flex-wrap justify-center gap-20 mt-10">
+        {
+            certs.map((cert)=>(
+                <li class="w-[300px]">
+                    <div class="w-[300px] h-[200px] relative cursor-pointer" onclick="extendCert(this)">
+                        <img
+                        class="cuadro w-full sm:h-full h-full absolute z-10 select-none"
+                        src="/certs/Cuadro.png" draggable="false" loading="lazy"
+                        />
+                        <img
+                        class="cert w-[85%] h-[159px] relative top-[20px] left-[23px] select-none"
+                        src={cert.image} draggable="false" loading="lazy"
+                        />
+                    </div>
+                    <h3 class="text-center mx-4 my-2 text-balance text-lg">{cert.title}</h3>
+                    {cert.url && (
+                        <div class="w-full flex justify-center">
+                            <a
+                            href={cert.url}
+                            class="text-white transition-all bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            >
+                            Comprobar validez
+                            </a>
+                        </div>
+
+                    )
+                    }
+                    
+                </li>     
+            ))
+        }
+    </ul>
+    <div id="overlay">
+        <div class="relative sm:w-[70%] sm:max-w-[70%] sm:h-[80%] sm:max-h-[80%] w-[90%] max-w-[90%] h-[50%] max-h-[50%]">
+            <img src="/certs/Cuadro.png" class="cuadro-ext absolute z-10 select-none inset-0">
+            <img src="" class="cert-ext w-[85%] h-[79.5%] relative top-[10%] left-[8%] select-none">
+        </div>
+      </div>
+</main>
+</Layout>
+<style>
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        /* display: none;*/
+        display: flex;
+        opacity: 0;
+        visibility: hidden;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        transition: all 0.3s ease;
+    }
+    
+    #overlay div {
+       
+        display: block;
+        margin: 0 auto;
+    }
+
+    .cuadro-ext{
+        max-width: 100%;
+        max-height: 100%;
+        width: 100%;
+        height: 100%;
+    }
+    </style>
+
+<script is:inline>
+    function extendCert(div) {
+      let overlay = document.getElementById('overlay');
+      let overlayImg = overlay.querySelector('.cert-ext');
+      overlayImg.src = div.querySelector(".cert").src;
+      overlay.style.visibility = "visible";
+      overlay.style.opacity = 1;
+      overlay.onclick = () => {
+        overlay.style.visibility = "hidden";
+        overlay.style.opacity = 0;
+      }
+    }
+</script>

@@ -1,0 +1,177 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
+import Html from "./icons/techIcons/Html.astro"
+import Css from "./icons/techIcons/Css.astro"
+import Tailwind from "./icons/techIcons/Tailwind.astro"
+import React from "./icons/techIcons/React.astro"
+import Angular from "./icons/techIcons/Angular.astro"
+import Javascript from "./icons/techIcons/Javascript.astro"
+import Typescript from "./icons/techIcons/Typescript.astro"
+import Php from "./icons/techIcons/Php.astro"
+import Jquery from "./icons/techIcons/Jquery.astro"
+import LinkInline from "./LinkInline.astro"
+import Mysql from "./icons/techIcons/Mysql.astro"
+
+const tags = {
+  html: {
+    name: "HTML",
+    class: "bg-orange-400 text-white",
+    icon: Html,
+  },
+  css: {
+    name: "CSS",
+    class: "bg-blue-500 text-white",
+    icon: Css,
+  },
+  javascript: {
+    name: "JavaScript",
+    class: "bg-yellow-600 text-white",
+    icon: Javascript,
+  },
+  typescript: {
+    name: "TypeScript",
+    class: "bg-blue-700 text-white",
+    icon: Typescript,
+  },
+  jquery: {
+    name: "jQuery",
+    class: "bg-cyan-800 text-white",
+    icon: Jquery,
+  },
+  php: {
+    name: "PHP",
+    class: "bg-indigo-500 text-white",
+    icon: Php,
+  },
+  react: {
+    name: "React",
+    class: "bg-blue-800 text-white",
+    icon: React,
+  },
+  angular: {
+    name: "Angular",
+    class: "bg-red-400 text-white",
+    icon: Angular,
+  },
+  mysql: {
+    name: "MySQL",
+    class: "bg-sky-400 text-white",
+    icon: Mysql,
+  },
+  tailwind: {
+    name: "Tailwind CSS",
+    class: "bg-[#003159] text-white",
+    icon: Tailwind,
+  },
+}
+const PROJECTS = [
+  {
+    title: "BingoApp",
+    description:
+      "Aplicación interactiva que permite jugar al juego de bingo de hasta 500 cartones, con opciones de configuración, sonidos y audios de los cantos.",
+    link: "https://bingoapp300.netlify.app",
+    github: "",
+    image: "/projects/bingoapp.png",
+    tags: [tags.angular,tags.typescript,tags.css,tags.html],
+  },
+  {
+    title: "Sistema de gestión y evaluación de actividades para el 911",
+    description:
+      "Sistema para optimizar la gestión y evaluación del desempeño de empleados. Combina la visualización ágil de tareas mediante un kanban con análisis estadísticos detallados. Además, incorpora un sistema de puntuación automático para reconocer y premiar al empleado destacado del mes y del año.",
+    link: "",
+    github: "",
+    mas:"/proyectos/actividades-911",
+    image: "/projects/actividades-911.png",
+    tags: [tags.mysql,tags.php,tags.jquery,tags.javascript,tags.css,tags.html],
+  },
+  {
+    title: "Simplex Method App",
+    description:
+      "Aplicación sencilla que automatiza los cálculos del método simplex para obtener la mejor solución de un problema a partir de un conjunto de datos. Es util en ejercicios de programación lineal.",
+    link: "",
+    github: "https://github.com/Lmrs300/Simplex-Method-App",
+    image: "/projects/simplex method app.png",
+    tags: [tags.react,tags.javascript,tags.css,tags.html],
+  },
+  {
+    title: "Sistema de facturación",
+    description:
+      "Sistema para gestionar productos, clientes, vendedores y facturas; pudiendo generar estas ultimas en formato PDF.",
+    link: "",
+    github: "https://github.com/Lmrs300/billingApp",
+    image: "/projects/billingapp.png",
+    tags: [tags.mysql,tags.php,tags.jquery,tags.javascript,tags.css,tags.html],
+  },
+]
+---
+
+<div class="flex flex-col gap-y-16 ">
+  {
+    PROJECTS.map(({ image, title, description, tags, link, github, mas }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0" id={"project-"+title}>
+  <div class="w-full md:w-1/2">
+    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+      <img class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" src={image} />
+    </div>
+  </div>
+
+  <div class="w-full md:w-1/2 md:max-w-lg">
+    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+      {title}
+    </h3>
+    <div class="flex flex-wrap mt-2">
+      <ul class="flex flex-row mb-2 gap-x-2">
+          {tags.map((tag) => (
+            <li>
+              <span
+                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+              >
+                <tag.icon class="size-4" />
+                {tag.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+
+      <div class="mt-2 text-gray-700 dark:text-gray-200 text-pretty">
+        <p>{description}</p>
+
+        {
+        mas && 
+        (<p class="mt-2">
+          <LinkInline href={mas}>
+            Ver mas {">"}
+          </LinkInline>
+        </p>)
+        }
+        
+      </div>
+      
+      <footer class="flex items-end justify-start mt-4 gap-x-4">
+          {github && (
+            <LinkButton href={github}>
+              <GitHub class="size-6" />
+              Ver código
+              
+            </LinkButton>
+          )}
+          {link && (
+            <LinkButton href={link}>
+              <Link class="size-4" />
+              Ver página
+            </LinkButton>
+          )}
+        </footer>
+        
+    </div>
+    
+  </div>
+</article>
+    ))
+  }
+</div>
+
+
+

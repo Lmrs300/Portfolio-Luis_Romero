@@ -1,0 +1,37 @@
+---
+import SocialPill from "./SocialPill.astro"
+import Cv from "./icons/Cv.astro"
+---
+
+<article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+  <div
+    class="[&>p]:mb-4 [&>p>strong]:text-yellow-500 dark:[&>p>strong]:text-yellow-100 [&>p>strong]:font-normal [&>p>strong]:font-mono text-pretty order-2 md:order-1"
+  >
+    <p>
+      Como pudiste ver al principio de esta página, me llamo Luis Romero, un nombre común para una persona poco común. Desde niño, siempre me ha encantado la tecnología, los videojuegos y los Legos, ya que siempre me ha gustado la idea de <strong>construir o crear algo nuevo</strong>.
+    </p>
+
+    <p>
+      Así que combinando mis aficiones, de más mayor quise estudiar ingeniería electrónica, asociando el armar Legos con armar dispositivos electrónicos, cosa que al final no se dio 😥​; por lo que termine en la carrera de informática, en la cual pude descubrir mi gusto por el desarrollo de aplicaciones (ya sabrás por qué) y en unos años <strong>me gradué como ingeniero en informática</strong>.</p>
+
+    <p>
+      Aparte de lo que estudié en la universidad, también estudie mucho por fuera de la misma, <strong>completando diversidad de cursos</strong> (la mayoría sin certificación) y <strong>creando proyectos</strong>, mayormente personales y alguno que otro proyecto universitario para una organización: el 911 de los Altos Mirandinos; preparándome así para <strong>ser un desarrollador Full-Stack</strong>, capaz de crear cualquier aplicación en cualquier ámbito, desde la recolección y análisis de requisitos y el diseño de la aplicación hasta su despliegue en producción.
+
+    </p>
+
+    <p>
+      Entre mis habilidades blandas, puedo decir que soy <strong>responsable</strong>, <strong>proactivo</strong>, <strong>atento al detalle</strong> y <strong>trabajador</strong>, con buena <strong>capacidad de análisis y resolución de problemas</strong>; <strong>capacidad para entender y aprender en poco tiempo</strong>. Soy <strong>autodidacta</strong>, me gusta progresar constantemente y me entusiasma aprender cosas nuevas relacionadas con la informática y la tecnología, pretendiendo dar lo mejor de mí para <strong>ser un buen profesional</strong> y <strong>hacer un gran trabajo</strong>.
+    </p>
+    
+  </div>
+
+  <div class="order-1 w-[16rem] h-full p-1 md:order-2 lg:w-[100rem] flex flex-col items-center justify-center gap-8">
+    <img width="200" height="200" src="/Luis-photo.png" alt="Luis Romero" class="object-cover w-64 h-full p-1 lg:rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 10%">
+    <SocialPill href="/Curriculum - Luis Romero.pdf" download="Curriculum - Luis Romero.pdf">
+      <Cv class="size-6"/> Descargar CV
+    </SocialPill>
+  </div>
+  
+  
+
+</article>

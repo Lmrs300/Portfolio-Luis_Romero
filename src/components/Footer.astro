@@ -1,0 +1,37 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import LinkedIn from "./icons/LinkedIn.astro"
+
+
+const currentYear = new Date().getFullYear()
+---
+
+
+
+<footer
+  class="opacity-80 m-4 min-[375px]:pl-4 md:pl-0 mt-16 w-full mx-auto container lg:max-w-4xl md:max-w-2xl mb-10 flex justify-center"
+>
+  <div
+    class="rounded-lg w-full max-w-screen-xl mx-auto md:flex md:items-center md:justify-between py-4"
+  >
+    <span class="text-sm sm:text-center text-zinc-800/90 dark:text-zinc-200/90"
+      >© {currentYear}
+      <a href="#" class="transition hover:underline">Luis Romero</a>.
+    </span>
+    <ul
+      class="flex flex-wrap items-center gap-2 mt-3 text-sm font-medium dark:text-white/90 sm:mt-0"
+    >
+    <li>
+      <a id="contacto" href="mailto:luismrs30@gmail.com" target="_blank" class="transition hover:text-blue-500 dark:hover:text-blue-500"
+        >Contacto</a
+      >
+    </li>
+    <li>
+      <a href="https://www.linkedin.com/in/luismrs300/" target="_blank" class="transition hover:text-blue-500 dark:hover:text-blue-500 me-4 md:me-6 relative top-2"><LinkedIn/> </a>
+    </li>
+      <li>
+        <a href="https://github.com/Lmrs300" target="_blank" class="transition hover:text-blue-500 dark:hover:text-blue-500 me-4 md:me-6 relative top-2"><GitHub/> </a>
+      </li>
+    </ul>
+  </div>
+</footer>

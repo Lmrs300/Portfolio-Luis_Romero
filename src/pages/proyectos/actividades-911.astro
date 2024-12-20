@@ -1,0 +1,130 @@
+---
+import ProjectItem from "@/components/ProjectItem";
+import Layout from "@/layouts/Layout.astro";
+
+
+const imgs=[
+    {
+        title:"Página principal",
+        url:"/projects/actividades-911/Pagina principal.png"
+    },
+    {
+        title:"Kanban board de actividades",
+        url:"/projects/actividades-911/Kanban actividades.png"
+    },
+    {
+        title:"Historial de actividades",
+        url:"/projects/actividades-911/Historial de actividades.png"
+    },
+    {
+        title:"Panel de sección de operatividad",
+        url:"/projects/actividades-911/Panel de operatividad.png"
+    },
+    {
+        title:"Asistencias",
+        url:"/projects/actividades-911/Asistencias.png"
+    },
+    {
+        title:"Gráfico de actividades completadas",
+        url:"/projects/actividades-911/Grafico1.png"
+    },
+    {
+        title:"Gráfico de aptitudes del personal",
+        url:"/projects/actividades-911/Grafico2.png"
+    },
+    {
+        title:"Usuarios",
+        url:"/projects/actividades-911/Usuarios.png"
+    },
+    {
+        title:"Perfil de usuario",
+        url:"/projects/actividades-911/Perfil de usuario.png"
+    },
+    {
+        title:"Evaluación de usuario",
+        url:"/projects/actividades-911/Resultados de evaluacion.png"
+    },
+    {
+        title:"Preguntas frecuentes",
+        url:"/projects/actividades-911/Preguntas frecuentes.png"
+    },
+]
+
+const videos=[
+    {
+        title:"Elección de empleado",
+        url:"/projects/actividades-911/Eleccion de empleado.mp4"
+    }
+]
+
+const title = "Sistema de gestión y evaluación de actividades para el 911"
+---
+
+<Layout title="Actividades-911" description="Proyecto - actividades-911" showFooter={false}>
+
+    <ProjectItem client:load title={title} imgs={imgs} videos={videos} urlVolver={"/#project-" + title}>
+        <h1 class="lg:text-3xl text-2xl text-center mb-4">Contexto</h1>
+        <p class="text-pretty text-lg">
+          Este sistema consiste en un proyecto realizado para ayudar a
+          gestionar y evaluar las actividades realizadas por los empleados del
+          área de tecnología del 911 de los Altos Mirandinos; permitiendo
+          además, marcar si los recursos del 911 están operativos o no,
+          registrar la asistencia de los empleados, ver gráficos estadísticos
+          del desempeño de los empleados, gestionar los datos de los mismos y,
+          en base a los puntos obtenidos al realizar actividades, elegir el
+          empleado del mes y del año. Dividiendo los privilegios de cada
+          usuario según el rol que tengan dentro del sistema.
+        </p>
+        <p class="text-pretty text-lg mt-8">
+          Nota: Este proyecto se muestra aquí gracias al coordinador de
+          tecnología del 911, quien dio permiso para mostrar una versión demo
+          del sistema con datos de prueba.
+        </p>
+        <h1 class="lg:text-3xl text-2xl text-center mb-4 mt-12">
+          Características destacables
+        </h1>
+        <ul class="text-pretty text-lg mt-8 list-disc lis flex flex-col gap-6">
+          <li>
+            <strong>Pagina principal</strong>, donde se puede visualizar el
+            logo, el empleado del mes y del año y un recuento de las
+            actividades completadas por todos los empleados a lo largo del
+            año.
+          </li>
+          <li>
+            <strong>Kanban Board</strong>, al estilo de Trello, para gestionar
+            el estado de las actividades y sus datos de manera sencilla y
+            cómoda.
+          </li>
+          <li>
+            <strong>Panel de operatividad</strong> para marcar con solo un
+            click, que recursos del 911 están o no operativos en cada día,
+            tanto para el turno de la mañana como el de la tarde.
+          </li>
+          <li>
+            <strong>Gráficos hechos con “chart.js”</strong>, que muestran
+            estadísticas de manera vistosa respecto a la cantidad de
+            actividades completadas en el año por los empleados.
+          </li>
+          <li>
+            <strong>Carrusel de cartas</strong> para mostrar de manera vistosa
+            los datos de los usuarios/empleados.
+          </li>
+          <li>
+            <strong>Perfil del usuario/empleado</strong> para visualizar sus
+            puntajes, cambiar la foto, editar sus datos o evaluarlo, en caso
+            de tener el rol de coordinador (el cual sería el rol de mayor
+            rango).
+          </li>
+          <li>
+            <strong>Sección de evaluación del usuario</strong>, donde se ven
+            los resultados finales de sus puntos obtenidos en el mes y se
+            puede generar un reporte de su desempeño.
+          </li>
+          <li>
+            <strong>Sección de ayuda</strong>, donde se puede ver para que
+            sirve cada botón del sistema y resolver dudas acerca del
+            funcionamiento del sistema.
+          </li>
+        </ul>
+    </ProjectItem>
+</Layout>

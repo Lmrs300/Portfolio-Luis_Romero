@@ -1,0 +1,116 @@
+---
+import Git from "@/components/icons/techIcons/Git.astro"
+import GitHubFull from "./icons/GitHub-full.astro"
+import Netlify from "@/components/icons/techIcons/Netlify.astro"
+import Html from "@/components/icons/techIcons/Html.astro"
+import Css from "@/components/icons/techIcons/Css.astro"
+import Javascript from "@/components/icons/techIcons/Javascript.astro"
+import Typescript from "@/components/icons/techIcons/Typescript.astro"
+import Jquery from "@/components/icons/techIcons/Jquery.astro"
+import Php from "@/components/icons/techIcons/Php.astro"
+import Mysql from "@/components/icons/techIcons/Mysql.astro"
+import Sqlite from "@/components/icons/techIcons/Sqlite.astro"
+import Firebase from "@/components/icons/techIcons/Firebase.astro"
+import Mongodb from "@/components/icons/techIcons/Mongodb.astro"
+import Python from "@/components/icons/techIcons/Python.astro"
+import Nodejs from "@/components/icons/techIcons/Nodejs.astro"
+import Expressjs from "@/components/icons/techIcons/Expressjs.astro"
+import React from "@/components/icons/techIcons/React.astro"
+import Angular from "@/components/icons/techIcons/Angular.astro"
+import AstroIcon from "@/components/icons/techIcons/AstroIcon.astro"
+import Tailwind from "@/components/icons/techIcons/Tailwind.astro"
+
+const techs=[
+    {
+        name:"Git",
+        icon: Git
+    },
+    {
+        name:"GitHub",
+        icon: GitHubFull
+    },
+    {
+        name:"Netlify",
+        icon: Netlify
+    },
+    {
+        name:"HTML",
+        icon: Html
+    },
+    {
+        name:"CSS",
+        icon: Css
+    },
+    {
+        name:"JavaScript",
+        icon: Javascript
+    },
+    {
+        name:"TypeScript",
+        icon: Typescript
+    },
+    {
+        name:"jQuery",
+        icon: Jquery
+    },
+    {
+        name:"PHP",
+        icon: Php
+    },
+    {
+        name:"MySQL",
+        icon: Mysql
+    },
+    {
+        name:"SQLite",
+        icon: Sqlite
+    },
+    {
+        name:"Firebase",
+        icon: Firebase
+    },
+    {
+        name:"MongoDB",
+        icon: Mongodb
+    },
+    {
+        name:"Python",
+        icon: Python
+    },
+    {
+        name:"Node.js",
+        icon: Nodejs
+    },
+    {
+        name:"Express.js",
+        icon: Expressjs
+    },
+    {
+        name:"React",
+        icon: React
+    },
+    {
+        name:"Angular",
+        icon: Angular
+    },
+    {
+        name:"Astro",
+        icon: AstroIcon
+    },
+    {
+        name:"Tailwind CSS",
+        icon: Tailwind
+    },
+]
+
+---
+
+<ul class="w-full flex flex-wrap justify-center gap-8">
+    
+    {techs.map((tech)=>(
+            <li class="flex justify-center  items-center flex-col gap-1 rounded-xl p-4 pb-2 pt-3 bg-black/5 dark:bg-white/5 dark:hover:bg-white/15 hover:bg-black/10 transition shadow-md dark:shadow dark:shadow-white select-none">
+                <tech.icon class="size-16"/>
+                <h3 class="text-lg">{tech.name}</h3>
+            </li>
+        ))}
+</ul>
