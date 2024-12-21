@@ -1,52 +1,58 @@
 ---
+import Html from "@/components/icons/techIcons/Html.astro";
 import ProjectItem from "../../components/ProjectItem";
 import Layout from "../../layouts/Layout.astro";
+import Css from "@/components/icons/techIcons/Css.astro";
+import Javascript from "@/components/icons/techIcons/Javascript.astro";
+import Jquery from "@/components/icons/techIcons/Jquery.astro";
+import Php from "@/components/icons/techIcons/Php.astro";
+import Mysql from "@/components/icons/techIcons/Mysql.astro";
 
 
 const imgs=[
     {
         title:"Página principal",
-        url:"/projects/actividades-911/Pagina principal.png"
+        url:"/projects/actividades-911/Pagina principal.webp"
     },
     {
         title:"Kanban board de actividades",
-        url:"/projects/actividades-911/Kanban actividades.png"
+        url:"/projects/actividades-911/Kanban actividades.webp"
     },
     {
         title:"Historial de actividades",
-        url:"/projects/actividades-911/Historial de actividades.png"
+        url:"/projects/actividades-911/Historial de actividades.webp"
     },
     {
         title:"Panel de sección de operatividad",
-        url:"/projects/actividades-911/Panel de operatividad.png"
+        url:"/projects/actividades-911/Panel de operatividad.webp"
     },
     {
         title:"Asistencias",
-        url:"/projects/actividades-911/Asistencias.png"
+        url:"/projects/actividades-911/Asistencias.webp"
     },
     {
         title:"Gráfico de actividades completadas",
-        url:"/projects/actividades-911/Grafico1.png"
+        url:"/projects/actividades-911/Grafico1.webp"
     },
     {
         title:"Gráfico de aptitudes del personal",
-        url:"/projects/actividades-911/Grafico2.png"
+        url:"/projects/actividades-911/Grafico2.webp"
     },
     {
         title:"Usuarios",
-        url:"/projects/actividades-911/Usuarios.png"
+        url:"/projects/actividades-911/Usuarios.webp"
     },
     {
         title:"Perfil de usuario",
-        url:"/projects/actividades-911/Perfil de usuario.png"
+        url:"/projects/actividades-911/Perfil de usuario.webp"
     },
     {
         title:"Evaluación de usuario",
-        url:"/projects/actividades-911/Resultados de evaluacion.png"
+        url:"/projects/actividades-911/Resultados de evaluacion.webp"
     },
     {
         title:"Preguntas frecuentes",
-        url:"/projects/actividades-911/Preguntas frecuentes.png"
+        url:"/projects/actividades-911/Preguntas frecuentes.webp"
     },
 ]
 
@@ -57,12 +63,61 @@ const videos=[
     }
 ]
 
+const techs = [
+    {
+      name: "HTML",
+      class: "bg-orange-400 text-white",
+      icon: Html,
+    },
+    {
+      name: "CSS",
+      class: "bg-blue-500 text-white",
+      icon: Css,
+    },
+    {
+      name: "JavaScript",
+      class: "bg-yellow-600 text-white",
+      icon: Javascript,
+    },
+    {
+      name: "jQuery",
+      class: "bg-cyan-800 text-white",
+      icon: Jquery,
+    },
+    {
+      name: "PHP",
+      class: "bg-indigo-500 text-white",
+      icon: Php,
+    },
+    {
+      name: "MySQL",
+      class: "bg-sky-400 text-white",
+      icon: Mysql,
+    },
+  ]
+
 const title = "Sistema de gestión y evaluación de actividades para el 911"
 ---
 
 <Layout title="Actividades-911" description="Proyecto - actividades-911" showFooter={false}>
 
     <ProjectItem client:load title={title} imgs={imgs} videos={videos} urlVolver={"/#project-" + title}>
+
+      <div class="flex flex-wrap">
+        <ul class="flex flex-row mb-16 gap-x-2">
+          {techs.map((tech) => (
+            <li>
+              <span
+                class={`flex items-center gap-x-2 rounded-full text-lg ${tech.class} py-1 px-2 `}
+              >
+                <tech.icon class="size-6" />
+                {tech.name}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
         <h1 class="lg:text-3xl text-2xl text-center mb-4">Contexto</h1>
         <p class="text-pretty text-lg">
           Este sistema consiste en un proyecto realizado para ayudar a
@@ -111,7 +166,7 @@ const title = "Sistema de gestión y evaluación de actividades para el 911"
           </li>
           <li>
             <strong>Perfil del usuario/empleado</strong> para visualizar sus
-            puntajes, cambiar la foto, editar sus datos o evaluarlo, en caso
+            puntajes, cambiar la foto, editar sus datos o evaluarlos, en caso
             de tener el rol de coordinador (el cual sería el rol de mayor
             rango).
           </li>
@@ -124,6 +179,9 @@ const title = "Sistema de gestión y evaluación de actividades para el 911"
             <strong>Sección de ayuda</strong>, donde se puede ver para que
             sirve cada botón del sistema y resolver dudas acerca del
             funcionamiento del sistema.
+          </li>
+          <li>
+            <strong>Elección del empleado del mes y del año</strong>, según la cantidad de puntos obtenidos en dichos períodos.
           </li>
         </ul>
     </ProjectItem>

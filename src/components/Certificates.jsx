@@ -6,27 +6,27 @@ function Certificates() {
   const featuredCerts = [
     {
       title: "Back End Development and Apis",
-      image: "/certs/Certificacion - Back-end development and apis.png",
+      image: "/certs/Certificacion - Back-end development and apis.webp",
     },
     {
       title: "Universidad Angular - Cero a Experto - Angular 18",
-      image: "/certs/Certificado curso Angular.png",
+      image: "/certs/Certificado curso Angular.webp",
     },
     {
       title: "Introducción al desarrollo web: HTML y CSS",
-      image: "/certs/Introducción al desarrollo web.png",
+      image: "/certs/Introducción al desarrollo web.webp",
     },
     {
       title: "Python Essentials 1",
-      image: "/certs/Python Essentials 1 - Certificado.png",
+      image: "/certs/Python Essentials 1 - Certificado.webp",
     },
     {
       title: "Python Essentials 2",
-      image: "/certs/Python Essentials 2 - Certificado.png",
+      image: "/certs/Python Essentials 2 - Certificado.webp",
     },
     {
       title: "Hacksplaining Security Training",
-      image: "/certs/Hacksplaining Completion Certificate.png",
+      image: "/certs/Hacksplaining Completion Certificate.webp",
     },
   ];
 
@@ -40,7 +40,7 @@ function Certificates() {
               <div className="w-full flex justify-center sm:h-[400px] h-[300px]">
                 <img
                   className="cuadro w-[80%] sm:h-[400px] h-[300px] absolute z-10"
-                  src="/certs/Cuadro.png"
+                  src="/certs/Cuadro.webp"
                 />
                 <img
                   className="w-[68%] sm:h-[317px] h-[238px] relative sm:top-[40px] top-[30px]"

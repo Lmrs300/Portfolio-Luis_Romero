@@ -4,7 +4,7 @@ import CoverflowSwiper from "./CoverflowSwiper";
 function ProjectHeader({ title, imgs, videos, urlVolver, children }) {
   return (
     <>
-      <main className="lg:py-20 py-24 scroll-m-20 w-full mx-auto container flex justify-center items-center flex-col relative">
+      <main className="lg:py-22 py-24 scroll-m-20 w-full mx-auto container flex justify-center items-center flex-col relative">
         <a
           href={urlVolver}
           className="absolute top-16 md:left-0 left-3 text-lg hover:text-blue-500 transition"
@@ -49,7 +49,7 @@ function ProjectHeader({ title, imgs, videos, urlVolver, children }) {
             ))}
         </CoverflowSwiper>
 
-        <div className="w-[70%] my-16">{children}</div>
+        <div className="w-[70%] mt-6">{children}</div>
       </main>
     </>
   );
