@@ -1,0 +1,26 @@
+---
+interface Props {
+  techs: {
+    name: string;
+    class: string;
+    icon: any;
+  }[];
+}
+
+const { techs } = Astro.props;
+---
+
+<div class="flex flex-wrap w-full justify-center">
+  <ul class="flex flex-row mb-12 gap-x-4 gap-y-4 flex-wrap justify-center">
+    {techs.map((tech) => (
+      <li>
+        <span
+          class={`flex items-center gap-x-2 rounded-full md:text-lg text-sm ${tech.class} py-1 px-2 `}
+        >
+          <tech.icon class="md:size-6 size-5" />
+          {tech.name}
+        </span>
+      </li>
+    ))}
+  </ul>
+</div> 

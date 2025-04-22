@@ -1,0 +1,46 @@
+---
+import ProjectImgCarrousel from "./ProjectImgCarrousel";
+import TechList from "./TechList.astro";
+
+interface Props {
+  title: string;
+  imgs?: {
+    title: string;
+    url: string;
+  }[];
+  videos?: {
+    title: string;
+    url: string;
+  }[];
+  urlVolver: string;
+  techs: {
+    name: string;
+    class: string;
+    icon: any;
+  }[];
+}
+
+const { title, imgs, videos, urlVolver,techs } = Astro.props;
+---
+
+<main class="lg:py-22 py-24 scroll-m-20 w-full mx-auto container flex justify-center items-center flex-col relative">
+  <a
+    href={urlVolver}
+    class="absolute top-16 md:left-0 left-3 text-lg hover:text-blue-500 transition"
+  >
+    {"<"} Volver
+  </a>
+  <h1 class="sm:text-3xl text-xl text-center max-w-[90%] mb-8">
+    {title}
+  </h1>
+
+  {imgs && (
+    <ProjectImgCarrousel client:load imgs={imgs} videos={videos} />
+  )}
+
+<TechList techs={techs} />
+
+  <div class="w-[70%] mt-6">
+    <slot />
+  </div>
+</main> 
