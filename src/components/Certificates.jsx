@@ -41,10 +41,12 @@ function Certificates() {
                 <img
                   className="cuadro w-[80%] sm:h-[400px] h-[300px] absolute z-10"
                   src="/certs/Cuadro.webp"
+                  alt="Marco decorativo del certificado"
                 />
                 <img
                   className="w-[68%] sm:h-[317px] h-[238px] relative sm:top-[40px] top-[30px]"
                   src={cert.image}
+                  alt={`Certificado de ${cert.title}`}
                 />
               </div>
             </div>

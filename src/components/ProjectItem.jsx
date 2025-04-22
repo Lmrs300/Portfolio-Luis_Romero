@@ -25,6 +25,7 @@ function ProjectHeader({ title, imgs, videos, urlVolver, children }) {
                 <img
                   className="rounded-xl w-[70%] sm:h-[400px] h-[300px] mb-10"
                   src={img.url}
+                  alt={`Imagen del proyecto ${img.title}`}
                 />
               </div>
             </SwiperSlide>

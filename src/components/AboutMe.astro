@@ -1,6 +1,7 @@
 ---
 import SocialPill from "./SocialPill.astro"
 import Cv from "./icons/Cv.astro"
+ import { Image } from "astro:assets"
 ---
 
 <article class="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
@@ -26,7 +27,8 @@ import Cv from "./icons/Cv.astro"
   </div>
 
   <div class="order-1 w-[16rem] h-full p-1 md:order-2 lg:w-[100rem] flex flex-col items-center justify-center gap-8">
-    <img width="200" height="200" src="/Luis-photo.webp" alt="Luis Romero" class="object-cover w-64 h-full p-1 lg:rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20 " style="object-position: 50% 10%">
+
+    <Image width={200} height={200} src="/Luis-photo.webp" alt="Luis Romero" class="object-cover w-64 h-full p-1 lg:rotate-3 lg:p-2 lg:w-64 aspect-square rounded-2xl bg-black/20 dark:bg-yellow-500/5 ring-1 ring-black/70 dark:ring-white/20" style="object-position: 50% 10%" />
     
   </div>
   
