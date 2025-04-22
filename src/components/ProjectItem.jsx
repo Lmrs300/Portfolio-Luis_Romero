@@ -23,7 +23,7 @@ function ProjectHeader({ title, imgs, videos, urlVolver, children }) {
                   {img.title}
                 </h1>
                 <img
-                  className="rounded-xl w-[70%] sm:h-[400px] h-[300px] mb-10"
+                  className="rounded-xl sm:w-[70%] w-[90%] sm:h-[400px] h-[200px] mb-10"
                   src={img.url}
                   alt={`Imagen del proyecto ${img.title}`}
                 />
@@ -33,12 +33,12 @@ function ProjectHeader({ title, imgs, videos, urlVolver, children }) {
           {videos &&
             videos.map((video, index) => (
               <SwiperSlide key={index}>
-                <div className="w-full flex flex-col items-center gap-4 cursor-default">
+                <div className="w-full flex flex-col items-center justify-center gap-4 cursor-default">
                   <h1 className="lg:text-3xl text-2xl text-center">
                     {video.title}
                   </h1>
                   <video
-                    className="rounded-xl w-[70%] relative top-9"
+                    className="rounded-xl sm:w-[70%] w-[90%] relative top-9"
                     src={video.url}
                     loop
                     controls
