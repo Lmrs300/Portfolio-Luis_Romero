@@ -1,0 +1,110 @@
+---
+import Html from "../../components/icons/techIcons/Html.astro";
+import ProjectItem from "../../components/ProjectItem.astro";
+import Layout from "../../layouts/Layout.astro";
+import Css from "../../components/icons/techIcons/Css.astro";
+import Javascript from "../../components/icons/techIcons/Javascript.astro";
+import Typescript from "../../components/icons/techIcons/Typescript.astro";
+import React from "../../components/icons/techIcons/React.astro";
+import Nodejs from "../../components/icons/techIcons/Nodejs.astro";
+import Expressjs from "../../components/icons/techIcons/Expressjs.astro";
+import Jwt from "../../components/icons/techIcons/Jwt.astro";
+import Mysql from "../../components/icons/techIcons/Mysql.astro";
+
+const techs = [
+    {
+      name: "HTML",
+      class: "bg-orange-400 text-white",
+      icon: Html,
+    },
+    {
+      name: "CSS",
+      class: "bg-blue-500 text-white",
+      icon: Css,
+    },
+    {
+      name: "JavaScript",
+      class: "bg-yellow-600 text-white",
+      icon: Javascript,
+    },
+    {
+      name: "TypeScript",
+      class: "bg-blue-700 text-white",
+      icon: Typescript,
+    },
+    {
+      name: "React",
+      class: "bg-blue-800 text-white",
+      icon: React,
+    },
+    {
+      name: "Node.js",
+      class: "bg-green-900 text-white",
+      icon: Nodejs,
+    },
+    {
+      name: "Express",
+      class: "bg-gray-800 text-white",
+      icon: Expressjs,
+    },
+    {
+      name: "JWT",
+      class: "bg-purple-800 text-white",
+      icon: Jwt,
+    },
+    {
+      name: "MySQL",
+      class: "bg-sky-400 text-white",
+      icon: Mysql,
+    }
+  ]
+
+const title = "Sistema de gestión incidencias para el 911"
+---
+
+<Layout title="Incidencias-911" description="Proyecto - incidencias-911" showFooter={false}>
+
+    <ProjectItem title={title} urlVolver={"/#project-" + title} techs={techs}>
+
+      <h1 class="text-2xl text-center mb-4">Contexto</h1>
+        <p class="text-pretty text-lg">
+          Este sistema consiste en un proyecto realizado para ayudar a registrar y 
+          gestionar las incidencias percibidas por el organismo del 911 en toda el area de los Altos Mirandinos. 
+        </p>
+        <p class="text-pretty text-lg mt-8">
+          Nota: En este caso no se muestran imágenes del proyecto, ya que el sistema es privado y no tengo permisos para mostrarlo, solo para describirlo.
+        </p>
+        <h1 class="text-2xl text-center mb-4 mt-12">
+          Características destacables
+        </h1>
+        <ul class="text-pretty text-lg mt-8 list-disc lis flex flex-col gap-6">
+          
+          <li>
+            <strong>Cálculos estadísticos sobre las incidencias</strong>, mostrados en distintas tablas.
+          </li>
+          <li>
+            <strong>Lista negra</strong>, donde se registran los números de teléfono que han realizado muchas llamadas falsas o de broma en un periodo de tiempo determinado.
+          </li>
+       
+          <li>
+            <strong>Distintos gráficos hechos con "chart.js"</strong>, que muestran
+            estadísticas de manera vistosa respecto a las incidencias percibidas y las llamadas atendidas.
+          </li>
+
+          <li>
+            <strong>Historial de acciones o logs</strong>, donde se registran todas las acciones realizadas dentro del sistema, para un mejor control y seguimiento de los usuarios.
+          </li>
+
+          <li>
+            <strong>Recuperación y respaldo de base de datos desde el sistema</strong>, permitiendo a los administradores del sistema restaurar la base de datos en caso de que se haya perdido o se haya corrompido y respaldarla para futuros usos, al presionar un solo botón.
+          </li>
+    
+          <li>
+            <strong>Sección de ayuda</strong>, donde se puede ver para que
+            sirve cada botón del sistema y resolver dudas acerca del
+            funcionamiento del mismo.
+          </li>
+         
+        </ul>
+    </ProjectItem>
+</Layout>
